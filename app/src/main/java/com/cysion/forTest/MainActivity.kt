@@ -6,6 +6,7 @@ import com.cysion.forTest.testnet.NetJava
 import com.cysion.forTest.testnet.emitAllRequestByKotlin
 import com.cysion.forTest.testnet.emitAllRequestByKotlin2
 import com.cysion.forTest.zlknet.testZlk
+import com.cysion.forTest.zlknet.testZlk2
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
         vTv4.setOnClickListener {
             testZlk()
+            testZlk2()
         }
     }
 }
