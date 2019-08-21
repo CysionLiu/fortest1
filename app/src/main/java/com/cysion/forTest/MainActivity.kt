@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cysion.forTest.testnet.NetJava
 import com.cysion.forTest.testnet.emitAllRequestByKotlin
 import com.cysion.forTest.testnet.emitAllRequestByKotlin2
+import com.cysion.forTest.zlknet.testZlk
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         vTv3.setOnClickListener {
             NetJava().emitAllByJava()
         }
-
+        vTv4.setOnClickListener {
+            testZlk()
+        }
     }
 }

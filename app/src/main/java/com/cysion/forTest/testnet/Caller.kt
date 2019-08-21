@@ -17,3 +17,4 @@ object Caller2 : BaseCaller<TestApi>("http://www.123456789.com/app/", TestApi::c
         })
     }
 }
+
