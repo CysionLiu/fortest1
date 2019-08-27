@@ -15,16 +15,16 @@ import retrofit2.Retrofit
  * 例如，1-不需要其它操作，则直接声明
  * object Caller : BaseCaller<Api>("you baseurl", Api::class.java)
  * interface Api {
-        @GET()
-        fun test()
-    }
+@GET()
+fun test()
+}
  *  使用方式: Caller.api.test()或者Caller.loadApi<Api>().test()
  *
  * 2-需要其它操作，则重写子类方法
  *  object Caller2 : BaseCaller<Api>("you baseurl", Api::class.java){
  *      override fun beforeInit() {
-             addInterceptor(interceptor)
-        }
+addInterceptor(interceptor)
+}
  *  }
  *
  *  如需builder改动一些参数，子类重写getOkHttpClientBuilder等方法
@@ -67,7 +67,8 @@ abstract class BaseCaller<T>(val baseUrl: String, val apiClass: Class<T>) {
         okHttpClientBuilder.addInterceptor {
             //断点调试
             val request = it.request();
-            it.proceed(request)
+            val rep = it.proceed(request)
+            rep
         }
         okHttpClientBuilder.addInterceptor(HttpLoggingInterceptor().setLevel(getLevel()))
         val okHttpClient = okHttpClientBuilder.build()
@@ -79,7 +80,7 @@ abstract class BaseCaller<T>(val baseUrl: String, val apiClass: Class<T>) {
 
     }
 
-    fun addInterceptor(i: Interceptor): BaseCaller<T> {
+    protected fun addInterceptor(i: Interceptor): BaseCaller<T> {
         interceptors.add(i)
         return this
     }

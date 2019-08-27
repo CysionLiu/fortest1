@@ -30,7 +30,7 @@ fun testZlk() {
             "spaceType" to 1,
             "isIntranet" to 1,
             "userName" to "测试3"
-        )
+        ) as Map<String, Any>?
     ).enqueue(object : Callback<String> {
         override fun onFailure(call: Call<String>, t: Throwable) {
             Log.i("--$ ", t.message)
