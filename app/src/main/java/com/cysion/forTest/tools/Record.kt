@@ -9,3 +9,8 @@ fun dev(){
 fun f2(){
     Log.d("--","create f2")
 }
+
+
+fun f3(){
+    Log.d("--","change f2")
+}
