@@ -7,5 +7,6 @@ fun t2(){
     Log.d("--","t2 merge dev")
     Log.d("--","t2 is testing")
     Log.d("--","t2 test over")
+    Log.d("--","has merge t2")
 }
 
