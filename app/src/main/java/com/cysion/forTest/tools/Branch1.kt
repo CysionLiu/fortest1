@@ -7,4 +7,5 @@ fun t1(){
     Log.d("--","merge dev into t1")
     Log.d("--","t1 is testing")
     Log.d("--","t1 test over ;merge into dev")
+    Log.d("--","change dev")
 }
