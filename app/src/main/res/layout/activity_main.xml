@@ -1,74 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/topline"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
             android:id="@+id/vTv1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="kt1"
             android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="kt1"
+            app:layout_constraintHorizontal_weight="1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/vTv2"
-            app:layout_constraintTop_toTopOf="parent"
-    />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
             android:id="@+id/vTv2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="kt2"
             android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="kt2"
+            app:layout_constraintHorizontal_weight="2"
             app:layout_constraintLeft_toRightOf="@id/vTv1"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-    />
+            app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
             android:id="@+id/vTv3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="java1"
             android:layout_marginTop="20dp"
+            android:text="java1"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/vTv4"
-            app:layout_constraintTop_toBottomOf="@id/vTv1"
-    />
+            app:layout_constraintTop_toBottomOf="@id/vTv1" />
+
     <TextView
             android:id="@+id/vTv4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="资料库简单测试"
             android:layout_marginTop="20dp"
+            android:text="资料库简单测试"
             app:layout_constraintLeft_toRightOf="@id/vTv3"
             app:layout_constraintRight_toRightOf="@id/vTv5"
-            app:layout_constraintTop_toBottomOf="@id/vTv1"
-    />
+            app:layout_constraintTop_toBottomOf="@id/vTv1" />
 
     <TextView
             android:id="@+id/vTv5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!55"
             android:layout_marginTop="20dp"
+            android:text="Hello World!55"
+            android:textSize="30dp"
             app:layout_constraintLeft_toRightOf="@id/vTv4"
             app:layout_constraintRight_toRightOf="@id/vTv6"
-            app:layout_constraintTop_toBottomOf="@id/vTv1"
-    />
+            app:layout_constraintTop_toBottomOf="@id/vTv1" />
+
     <TextView
             android:id="@+id/vTv6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ttt"
             android:layout_marginTop="20dp"
+            android:text="ttt"
+            app:layout_constraintBaseline_toBaselineOf="@id/vTv5"
             app:layout_constraintLeft_toRightOf="@id/vTv5"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/vTv1"
-            />
+            app:layout_constraintTop_toBottomOf="@id/vTv1" />
 
+    <Button
+            android:id="@+id/vBtn1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="button"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vTv3"
+            app:layout_constraintVertical_bias="0.05" />
+
+    <TextView
+            android:id="@+id/vTvBar1"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="vbar1mm"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vBtn1" />
+
+    <TextView
+            android:id="@+id/vTvBar2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="vbar2mm"
+            app:layout_constraintLeft_toLeftOf="@id/vTvBar1"
+            app:layout_constraintTop_toBottomOf="@id/vTvBar1" />
+
+    <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="right"
+            app:constraint_referenced_ids="vTvBar1,vTvBar2" />
+
+    <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="vTvBar2,vTvBar1,vBtn1" />
+
+
+    <androidx.constraintlayout.widget.Group
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="visible"
+            app:constraint_referenced_ids="vTv1,vTv2" />
+
+    <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/barrier"
+            app:layout_constraintTop_toBottomOf="@+id/vBtn1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
