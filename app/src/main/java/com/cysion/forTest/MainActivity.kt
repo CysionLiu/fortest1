@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.cysion.forTest.testnet.NetJava
 import com.cysion.forTest.testnet.emitAllRequestByKotlin
 import com.cysion.forTest.testnet.emitAllRequestByKotlin2
-import com.cysion.forTest.ui.WebActivity
+import com.cysion.forTest.ui.NestActivity
 import com.cysion.forTest.zlknet.testZlk
 import com.cysion.forTest.zlknet.testZlk2
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,7 +31,9 @@ class MainActivity : AppCompatActivity() {
             testZlk2()
         }
         vTv5.setOnClickListener {
-            startActivity(Intent(this,WebActivity::class.java))
+            startActivity(Intent(this,NestActivity::class.java))
         }
+
+
     }
 }
